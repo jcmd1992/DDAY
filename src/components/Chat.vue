@@ -1,4 +1,5 @@
 <template>
+  <!-- this displays when chat tab is clicked on and shows any live chat messages -->
   <div class="chat container">
     <h2 class="text-primary text-center">Real-Time Chat</h2>
     <div class="card">
@@ -26,6 +27,7 @@ Vue.use(VueTables.ClientTable, {compileTemplates: true, filterByColumn: true})
 export default {
   name: 'Chat',
   data () {
+    // data expected to be displayed in chat room
     return {
       chattitle: ' Chat List ',
       chat: [],
@@ -48,6 +50,7 @@ export default {
     this.loadChats()
   },
   methods: {
+    // this loads the chats to be dispalyed
     loadChats: function () {
       chatservice.fetchChat()
         .then(response => {
@@ -66,14 +69,4 @@ export default {
 </script>
 
 <style scoped>
-  #app1 {
-    width: 60%;
-    margin: 0 auto;
-  }
-  .vue-title {
-    margin-top: 30px;
-    text-align: center;
-    font-size: 45pt;
-    margin-bottom: 10px;
-  }
 </style>

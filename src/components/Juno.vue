@@ -1,4 +1,5 @@
 <template>
+  <!-- this displays when Juno beach pin is clicked on -->
   <div class="Juno">
     <h1 class="vue-title">Juno</h1>
     <table>
@@ -40,11 +41,12 @@ export default {
   name: 'Juno'
 }
 </script>
-
+<!-- Styling code -->
 <style scoped>
   .Juno {
     margin-top: 30px;
     justify-content: left;
+  <!-- sets image as backround -->
     background-image: url(../assets/Juno.jpg);
     background-repeat: no-repeat;
     background-position: center;

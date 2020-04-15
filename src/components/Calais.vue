@@ -1,4 +1,5 @@
 <template>
+  <!-- this displays when Calais pin is clicked on -->
   <div class="Calais">
   <h1 class="vue-title">German Plan</h1>
   <table>
@@ -35,11 +36,12 @@ export default {
   name: 'Calais'
 }
 </script>
-
+<!-- Styling Code -->
 <style scoped>
   .Calais {
     margin-top: 30px;
     justify-content: left;
+  <!-- Sest image as background -->
     background-image: url(../assets/Calais.jpg);
     background-repeat: no-repeat;
     background-position: center;

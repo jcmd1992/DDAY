@@ -1,4 +1,5 @@
 <template>
+  <!-- this displays when Isigny pin is clicked on -->
   <div class="Isigny">
     <h1 class="vue-title">Isigny</h1>
     <table>
@@ -20,12 +21,13 @@ export default {
   name: 'Isigny'
 }
 </script>
-
+<!-- styling code -->
 <style scoped>
   .Isigny {
     margin-top: 30px;
     justify-content: left;
     background-image: url(../assets/Isigny.jpg);
+  <!-- sets image as background -->
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;

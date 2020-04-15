@@ -1,4 +1,5 @@
 <template>
+  <!-- this displays when Carentan pin is clicked on -->
   <div class="Carentan">
     <h1 class="vue-title">Carentan</h1>
     <table>
@@ -20,11 +21,12 @@ export default {
   name: 'Carentan'
 }
 </script>
-
+<!-- Styling Code -->
 <style scoped>
   .Carentan {
     margin-top: 30px;
     justify-content: left;
+  <!-- Sets image as background -->
     background-image: url(../assets/Carentan.jpg);
     background-repeat: no-repeat;
     background-position: center;

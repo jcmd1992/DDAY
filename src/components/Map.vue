@@ -1,4 +1,5 @@
 <template>
+  <!-- this displays the map when the map tab is clicked on -->
       <div class="App"/>
 </template>
 
@@ -6,7 +7,7 @@
 
 import MarkerClusterer from '@google/markerclusterer'
 import gmapsInit from '../utils/gmaps'
-
+// this sets all the pins on the map when it initializes -->
 const Omaha = [
   {
     position: {
@@ -120,7 +121,7 @@ const Weather = [
     }
   }
 ]
-
+// this runs the map and initializes it
 export default {
   name: 'Sorted',
   async mounted () {
@@ -135,7 +136,7 @@ export default {
         map.setCenter(results[0].geometry.location)
         map.fitBounds(results[0].geometry.viewport)
       })
-
+      // this sets the what happens when a pin is clicked on and can set different icons for  pins
       const Markers = Omaha
         .map((omaha) => {
           const Marker = new google.maps.Marker({...omaha, map})
@@ -143,10 +144,7 @@ export default {
           // Marker.addListener(`click`, () => markerClickHandler(Marker))
           Marker.addListener('click', function () {
             map.setZoom(13)
-            console.log('bit too much zoom?')
             map.setCenter(Marker.getPosition())
-            console.log('this might work')
-            // this.$router.push('/Message')
             window.location = '../#/Omaha'
           })
           return Marker
@@ -347,10 +345,7 @@ export default {
           // Marker.addListener(`click`, () => markerClickHandler(Marker))
           Marker15.addListener('click', function () {
             map.setZoom(13)
-            console.log('bit too much zoom?')
             map.setCenter(Marker15.getPosition())
-            console.log('this might work')
-            // this.$router.push('/Message')
             window.location = '../#/Isigny'
           })
           return Marker15
@@ -395,7 +390,7 @@ export default {
 }
 
 </script>
-
+<!-- Styling Code -->
 <style>
   html,
   body {

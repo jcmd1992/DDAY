@@ -1,13 +1,16 @@
 <template>
+  <!-- this is the code that displays when the send chat messages tab is clicked on -->
   <form @submit.prevent="submit">
     <div class="form-group">
       <label class="form__label">Chat</label>
+      <!-- takes in input from the user -->
       <input class="form__input" placeholder="enter some message here" v-model.trim="$v.chats.$model"/>
     </div>
     <p>
       <button class="btn btn-primary btn1" type="submit" :disabled="submitStatus === 'PENDING'">{{ chatBtnTitle }}</button>
     </p>
     <p>
+      <!-- button links to chat room -->
       <a href="#/Chat" class="btn btn-primary btn1" role="button">Chat</a>
     </p>
     <p class="typo__p" v-if="submitStatus === 'OK'">Thanks for your Chat Message!</p>
@@ -31,6 +34,7 @@ Vue.use(Vuelidate)
 export default {
   name: 'FormData',
   props: ['chatBtnTitle', 'chat'],
+  // data that is expected to be returned from user
   data () {
     return {
       chattitle: ' Chat ',
@@ -39,20 +43,20 @@ export default {
     }
   },
   validations: {
-
+    // sets validation requrements for any chat message
     chats: {
       required,
       minLength: minLength(5)
     }
   },
   methods: {
+    // submits the message to the chat
     submit () {
       console.log('submit!')
       this.$v.$touch()
       if (this.$v.$invalid) {
         this.submitStatus = 'ERROR'
       } else {
-        // do your submit logic here
         this.submitStatus = 'PENDING'
         setTimeout(() => {
           this.submitStatus = 'OK'
@@ -70,7 +74,7 @@ export default {
   }
 }
 </script>
-
+<!-- Styling Code -->
 <style scoped>
   #app1 {
     width: 95%;

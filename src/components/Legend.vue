@@ -1,4 +1,5 @@
 <template>
+  <!-- this displays when Legend tab is clicked on is clicked on -->
   <div style="width: 600px">
     <vue-table-dynamic :params="params" ref="table"></vue-table-dynamic>
   </div>

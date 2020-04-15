@@ -1,4 +1,5 @@
 <template>
+  <!-- this displays when Cliffs pin is clicked on -->
   <div class="Cliffs">
   <h1 class="vue-title">Pointe Du Hoc</h1>
   <table>
@@ -33,11 +34,12 @@ export default {
   name: 'Cliffs'
 }
 </script>
-
+<!-- Styling Code -->
 <style scoped>
   .Cliffs {
     margin-top: 30px;
     justify-content: left;
+  <!-- Sets image as background -->
     background-image: url(../assets/Cliffs.jpg);
     background-repeat: no-repeat;
     background-position: center;

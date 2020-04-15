@@ -1,4 +1,5 @@
 <template>
+  <!-- this displays when Bayeux pin is clicked on -->
   <div class="Bayeux">
     <h1 class="vue-title">Bayeux</h1>
     <table>
@@ -25,11 +26,12 @@ export default {
   name: 'Bayeux'
 }
 </script>
-
+<!-- Styling Code -->
 <style scoped>
   .Bayeux {
     margin-top: 30px;
     justify-content: left;
+    <!-- Sets image as background -->
     background-image: url(../assets/Bayeux.jpg);
     background-repeat: no-repeat;
     background-position: center;

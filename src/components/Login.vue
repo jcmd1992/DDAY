@@ -1,4 +1,5 @@
 <template>
+  <!-- this displays when Login tab is clicked on -->
   <div class="hero">
     <h3 class="vue-title"><i style="padding: 3px"></i>{{messagetitle}}</h3>
     <div class="container login-form">
@@ -6,6 +7,7 @@
         <div class="form-content align-center">
           <div class="column">
             <div class="form-group">
+              <!-- takes input from user -->
               <input type="email" class="form-control" placeholder="Email Address*" required="" v-model="email" />
             </div>
             <div class="form-group">
@@ -35,6 +37,7 @@ Vue.use(VueForm, {
 
 export default {
   data () {
+    // data expected to be returned by user
     return {
       messagetitle: 'Login',
       email: '',
@@ -44,6 +47,7 @@ export default {
     }
   },
   methods: {
+    // submits the data inputted
     submit () {
       console.log('submit')
       // do your submit logic here
@@ -58,6 +62,7 @@ export default {
       }, 500)
     },
     loginUser: function (credentials) {
+      // logs the user in
       console.log('LoginUser')
       AuthService.login(credentials)
         .then(response => {
@@ -79,7 +84,7 @@ export default {
   }
 }
 </script>
-
+<!-- styling code -->
 <style scoped>
   .vue-title {
     margin-top: 30px;

@@ -1,4 +1,5 @@
 <template>
+  <!-- this displays when Caen pin is clicked on -->
   <div class="Caen">
     <h1 class="vue-title">Caen</h1>
     <table>
@@ -38,11 +39,12 @@ export default {
   name: 'Caen'
 }
 </script>
-
+<!-- Styling Code -->
 <style scoped>
   .Caen {
     margin-top: 30px;
     justify-content: left;
+  <!-- Sets image as background -->
     background-image: url(../assets/Caen.jpg);
     background-repeat: no-repeat;
     background-position: center;

@@ -1,4 +1,5 @@
 <template>
+  <!-- this displays when airborne pin is clicked on -->
   <div class="American">
     <h1 class="vue-title">U.S Airborne Drops</h1>
     <table>
@@ -43,11 +44,12 @@ export default {
   name: 'American'
 }
 </script>
-
+<!-- Styling code -->
 <style scoped>
   .American {
     margin-top: 30px;
     justify-content: left;
+  <!-- Sets the Background Image -->
     background-image: url(../assets/American.jpg);
     background-repeat: no-repeat;
     background-position: center;

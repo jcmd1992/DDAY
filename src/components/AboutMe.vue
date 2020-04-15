@@ -1,4 +1,5 @@
 <template>
+  <!-- Displays on the about me page -->
   <div class="AboutMe">
     <h1 class="vue-title">About Me</h1>
     <table>

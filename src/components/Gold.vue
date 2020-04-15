@@ -1,4 +1,5 @@
 <template>
+  <!-- this displays when Gold beach pin is clicked on -->
   <div class="Gold">
     <h1 class="vue-title">Gold</h1>
     <table>
@@ -39,11 +40,12 @@ export default {
   name: 'Gold'
 }
 </script>
-
+<!-- styling code -->
 <style scoped>
   .Gold {
     margin-top: 30px;
     justify-content: left;
+  <!-- sets image as background -->
     background-image: url(../assets/Gold.jpg);
     background-repeat: no-repeat;
     background-position: center;

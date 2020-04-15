@@ -1,4 +1,5 @@
 <template>
+  <!-- this displays when yellow pin at dover is clicked is clicked on -->
   <div class="Fortitude">
     <h1 class="vue-title">Fortitude</h1>
     <table>
@@ -37,11 +38,12 @@ export default {
   name: 'Fortitude'
 }
 </script>
-
+<!-- Styling Code -->
 <style scoped>
   .Fortitude {
     margin-top: 30px;
     justify-content: left;
+  <!-- Sets image as background -->
     background-image: url(../assets/Fortitude.jpg);
     background-repeat: no-repeat;
     background-position: center;
