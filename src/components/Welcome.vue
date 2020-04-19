@@ -12,7 +12,7 @@
       </tr>
       <tr>
         <td>
-          <p>In this application, you can use the map and click on a pin to get information about what happened there and if yoy register you can use the live chat room and
+          <p>In this application, you can use the map and click on a pin to get information about what happened there and if you register you can use the live chat room and
           send private messages to me if you have questions or suggestions.</p></td>
       </tr>
       </div>
@@ -30,16 +30,15 @@ export default {
   .Welcome {
     margin-top: 30px;
     justify-content: left;
-  <!-- Sets imaage as background -->
     background-image: url(../assets/Welcome.jpg);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
     height: 100vh;
-    color:lightgreen;
+    color:darkgoldenrod;
   }
   .Welcome .info {
-    color: lightgreen;
+    color: darkgoldenrod;
     font-family: bold;
     font-size: 15pt;
   }
