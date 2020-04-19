@@ -46,7 +46,6 @@ export default {
   .Juno {
     margin-top: 30px;
     justify-content: left;
-  <!-- sets image as backround -->
     background-image: url(../assets/Juno.jpg);
     background-repeat: no-repeat;
     background-position: center;

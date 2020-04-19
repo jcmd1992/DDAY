@@ -27,7 +27,6 @@ export default {
     margin-top: 30px;
     justify-content: left;
     background-image: url(../assets/Isigny.jpg);
-  <!-- sets image as background -->
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;

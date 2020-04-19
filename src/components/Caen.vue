@@ -44,7 +44,6 @@ export default {
   .Caen {
     margin-top: 30px;
     justify-content: left;
-  <!-- Sets image as background -->
     background-image: url(../assets/Caen.jpg);
     background-repeat: no-repeat;
     background-position: center;

@@ -49,7 +49,6 @@ export default {
   .American {
     margin-top: 30px;
     justify-content: left;
-  <!-- Sets the Background Image -->
     background-image: url(../assets/American.jpg);
     background-repeat: no-repeat;
     background-position: center;

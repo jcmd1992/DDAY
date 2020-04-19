@@ -46,7 +46,6 @@ export default {
   .Utah {
     margin-top: 30px;
     justify-content: left;
-  <!-- Sets image as Background -->
     background-image: url(../assets/Utah.jpg);
     background-repeat: no-repeat;
     background-position: center;

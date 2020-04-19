@@ -53,7 +53,6 @@ export default {
   .Sword {
     margin-top: 30px;
     justify-content: left;
-  <!-- Sets image as background -->
     background-image: url(../assets/Sword.jpg);
     background-repeat: no-repeat;
     background-position: center;

@@ -45,7 +45,6 @@ export default {
   .Gold {
     margin-top: 30px;
     justify-content: left;
-  <!-- sets image as background -->
     background-image: url(../assets/Gold.jpg);
     background-repeat: no-repeat;
     background-position: center;

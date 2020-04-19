@@ -32,7 +32,6 @@ export default {
   .Weather {
     margin-top: 30px;
     justify-content: left;
-  <!-- Sets Image as background -->
     background-image: url(../assets/Weather.jpg);
     background-repeat: no-repeat;
     background-position: center;

@@ -41,7 +41,7 @@ export default {
   .Calais {
     margin-top: 30px;
     justify-content: left;
-  <!-- Sest image as background -->
+
     background-image: url(../assets/Calais.jpg);
     background-repeat: no-repeat;
     background-position: center;

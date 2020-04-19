@@ -56,7 +56,6 @@ export default {
   .British {
     margin-top: 30px;
     justify-content: left;
-  <!-- Sets images as background -->
     background-image: url(../assets/British.jpg);
     background-repeat: no-repeat;
     background-position: center;
