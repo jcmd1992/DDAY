@@ -1,4 +1,5 @@
 <template>
+  <!-- this is neede for users log in -->
   <div id="secure">
     <h1>Secure Area</h1>
     <p>

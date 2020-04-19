@@ -1,4 +1,5 @@
 <template>
+  <!-- this displays when Utah beach pin is clicked on -->
   <div class="Utah">
     <h1 class="vue-title">Utah</h1>
     <table>
@@ -40,11 +41,12 @@ export default {
   name: 'Utah'
 }
 </script>
-
+<!-- Styling Code -->
 <style scoped>
   .Utah {
     margin-top: 30px;
     justify-content: left;
+  <!-- Sets image as Background -->
     background-image: url(../assets/Utah.jpg);
     background-repeat: no-repeat;
     background-position: center;

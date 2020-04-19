@@ -1,10 +1,12 @@
 <template>
+  <!-- this displays when the register tab is clicked on -->
   <div class="hero">
     <h3 class="vue-title"><i style="padding: 3px"></i>{{messagetitle}}</h3>
     <div class="container register-form">
       <form @submit.prevent="submit">
         <div class="form-content align-center">
           <div class="column">
+            <!-- this takes input from the user -->
             <div class="form-group">
               <input type="email" class="form-control" name="email" placeholder="Email Address" required="" v-model="email" />
             </div>
@@ -41,6 +43,7 @@ Vue.use(VueForm, {
 })
 export default {
   data () {
+    // returns the expected data from user
     return {
       messagetitle: 'Register',
       email: '',
@@ -51,6 +54,7 @@ export default {
     }
   },
   methods: {
+    // these submit the user to database
     submit () {
       console.log('submit!')
       // do your submit logic here

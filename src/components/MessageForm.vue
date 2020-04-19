@@ -1,10 +1,13 @@
 <template>
+  <!-- this is used whn the message tab is clicked on -->
   <form @submit.prevent="submit">
     <div class="form-group">
       <label class="form__label">Personal Message</label>
+      <!-- this code takes in the user input -->
       <input class="form__input" placeholder="enter some message here" v-model.trim="$v.messages.$model"/>
     </div>
     <p>
+      <!-- this take us to were messages are displayed -->
       <button class="btn btn-primary btn1" type="submit" :disabled="submitStatus === 'PENDING'">{{ messageBtnTitle }}</button>
     </p>
     <p>
@@ -28,6 +31,7 @@ Vue.use(VueForm, {
   }
 })
 Vue.use(Vuelidate)
+// expected data from the user
 export default {
   name: 'FormData',
   props: ['messageBtnTitle', 'message'],
@@ -39,13 +43,14 @@ export default {
     }
   },
   validations: {
-
+    // validations rquired for user input
     messages: {
       required,
       minLength: minLength(5)
     }
   },
   methods: {
+    // submits the message to the database
     submit () {
       console.log('submit!')
       this.$v.$touch()

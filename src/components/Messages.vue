@@ -1,4 +1,5 @@
 <template>
+  <!-- this displays all the messages when the messages tab is clicked on -->
   <div class="hero">
     <h3 class="vue-title"><i class="fa fa-list" style="padding: 3px"></i>{{messagetitle}}</h3>
     <div id="app1">
@@ -18,6 +19,7 @@ Vue.use(VueTables.ClientTable, {compileTemplates: true, filterByColumn: true})
 export default {
   name: 'Message',
   data () {
+    // data expected to be returned
     return {
       messagetitle: ' Message List ',
       message: [],
@@ -38,11 +40,13 @@ export default {
   },
   // Fetches Messages when the component is created.
   created () {
+    // runs function called load messages
     this.loadMessages()
     this.loadReplies()
   },
   methods: {
     loadMessages: function () {
+      // retrieves all messages from database
       messagesservice.fetchMessage()
         .then(response => {
           // JSON responses are automatically parsed.

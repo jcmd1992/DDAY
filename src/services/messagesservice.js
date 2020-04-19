@@ -1,5 +1,5 @@
 import Api from '@/services/api'
-
+// sets path for messages
 export default {
   fetchMessage () {
     return Api().get('/messages')

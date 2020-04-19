@@ -1,4 +1,5 @@
 <template>
+  <!-- this was made for replies but could not be implemented -->
   <div id="app1" class="hero">
     <h3 class="vue-title"><i class="fa fa-money" style="padding: 3px"></i>{{messagetitle}}</h3>
     <div class="container mt-3 mt-sm-5">

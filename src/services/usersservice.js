@@ -1,5 +1,5 @@
 import Api from '../services/api'
-
+// sets path for users
 export default {
   fetchUsers () {
     return Api().get('/users')

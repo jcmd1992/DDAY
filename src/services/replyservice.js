@@ -1,5 +1,5 @@
 import Api from '@/services/api'
-
+// sets path for replies but ints not in use
 export default {
   fetchReply () {
     return Api().get('/messages')

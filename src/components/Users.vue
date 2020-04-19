@@ -1,9 +1,10 @@
 <template>
+  <!-- this displays the users when the users tab is clicked on -->
   <div class="hero">
     <h3 class="vue-title"><i class="fa fa-list" style="padding: 3px"></i>{{messagetitle}}</h3>
     <div id="app1">
       <v-client-table :columns="columns" :data="users" :options="options">
-        <a slot="edit" slot-scope="props" class="fa fa-edit fa-2x" @click="editMessage(props.row._id)"></a>
+        <a slot="edit" slot-scope="props" class="fa fa-edit fa-2x" @click="editUser(props.row._id)"></a>
         <a slot="remove" slot-scope="props" class="fa fa-trash-o fa-2x" @click="deleteuser(props.row._id)"></a>
       </v-client-table>
     </div>
@@ -18,6 +19,7 @@ Vue.use(VueTables.ClientTable, {compileTemplates: true, filterByColumn: true})
 export default {
   name: 'Users',
   data () {
+    // data expected to be reurned
     return {
       messagetitle: ' Users List ',
       users: [],
@@ -38,10 +40,12 @@ export default {
   },
   // Fetches Messages when the component is created.
   created () {
+    // runs loadusers function
     this.loadUsers()
   },
   methods: {
     loadUsers: function () {
+      // this gets users from database
       usersservice.fetchUsers()
         .then(response => {
           // JSON responses are automatically parsed.

@@ -1,10 +1,12 @@
 <template>
   <div id="app">
+    <!-- this displays the navbar and tabs when app is running -->
     <b-navbar toggleable="md" variant="dark" type="dark">
       <b-navbar-toggle target="nav_collapse"></b-navbar-toggle>
       <b-navbar-brand to="/">Invasion Of Normandy</b-navbar-brand>
       <b-collapse is-nav id="nav_collapse">
         <b-navbar-nav>
+          <!-- these show up when user is logged in -->
           <b-nav-item v-if="$store.state.isUserLoggedIn" to="/Message"><i style="padding: 5px"> Send Message </i></b-nav-item>
           <b-nav-item v-if="$store.state.isUserLoggedIn" to="/Messages"><i style="padding: 5px"> Messages </i></b-nav-item>
           <b-nav-item v-if="$store.state.isUserLoggedIn" to="/Chat"><i style="padding: 5px"> Chat  Room </i></b-nav-item>
@@ -18,6 +20,7 @@
           <b-nav-item to ="/Legend"><i style="padding: 5px"> Map Legend</i></b-nav-item>
           <b-nav-item v-if="!$store.state.isUserLoggedIn" to="/login"><i style="padding: 5px"> Login </i></b-nav-item>
           <b-nav-item v-if="!$store.state.isUserLoggedIn" to="/register"><i style="padding: 5px"> Register </i></b-nav-item>
+          <!-- this displays when user is logged in -->
           <b-nav-item v-if="$store.state.isUserLoggedIn" @click="logout"><i style="padding: 5px"> Logout </i></b-nav-item>
         </b-navbar-nav>
       </b-collapse>
@@ -30,6 +33,7 @@
 export default {
   name: 'App',
   methods: {
+    // logs user out
     logout () {
       this.$store.dispatch('setToken', null)
       this.$store.dispatch('setUser', null)

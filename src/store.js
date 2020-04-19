@@ -3,9 +3,8 @@ import Vuex from 'vuex'
 import createPersistedState from 'vuex-persistedstate'
 
 Vue.use(Vuex)
-
+// this code saves the users information that has logged in in local memory for later use
 const store = new Vuex.Store({
-  // Using plugin to persist the login states after refresh
   plugins: [createPersistedState()],
   state: {
     token: null,

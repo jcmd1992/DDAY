@@ -1,5 +1,5 @@
 import axios from 'axios'
-
+// connects to the server code
 export default() => {
   return axios.create({
     baseURL: 'http://localhost:3000/'

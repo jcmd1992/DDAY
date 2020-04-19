@@ -1,5 +1,5 @@
 import Api from '@/services/api'
-
+// sets path for chat
 export default {
   fetchChat () {
     return Api().get('/chat')

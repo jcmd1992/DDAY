@@ -1,4 +1,5 @@
 <template>
+  <!-- this displays when Omaha beach pin is clicked on -->
   <div class="Omaha">
     <h1 class="vue-title">Omaha</h1>
     <table>
@@ -44,11 +45,12 @@ export default {
   name: 'Omaha'
 }
 </script>
-
+<!-- Styling Code -->
 <style scoped>
   .Omaha {
     margin-top: 30px;
     justify-content: left;
+  <!-- Sets image as background -->
     background-image: url(../assets/Omaha.jpg);
     background-repeat: no-repeat;
     background-position: center;

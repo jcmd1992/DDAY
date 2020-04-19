@@ -1,4 +1,5 @@
 <template>
+  <!-- this displays when the wethear pin is clicked on -->
   <div class="Weather">
     <h1 class="vue-title">Weather</h1>
     <table>
@@ -26,11 +27,12 @@ export default {
   name: 'Weather'
 }
 </script>
-
+<!-- Styling Code -->
 <style scoped>
   .Weather {
     margin-top: 30px;
     justify-content: left;
+  <!-- Sets Image as background -->
     background-image: url(../assets/Weather.jpg);
     background-repeat: no-repeat;
     background-position: center;

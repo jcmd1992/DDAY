@@ -1,4 +1,5 @@
 <template>
+  <!-- this uses message form to display when the message tab is clicked on -->
   <div id="app1" class="hero">
     <h3 class="vue-title"><i class="fa fa-money" style="padding: 3px"></i>{{messagetitle}}</h3>
     <div class="container mt-3 mt-sm-5">
@@ -15,6 +16,7 @@
 import messagesservice from '../services/messagesservice'
 import MessageForm from '../components/MessageForm'
 export default {
+  // expected data to be returned
   data () {
     return {
       message: '',
@@ -25,9 +27,11 @@ export default {
     }
   },
   components: {
+    // using message form
     'message-form': MessageForm
   },
   methods: {
+    // submits the message to the database
     submitMessage: function (message) {
       console.log(message)
       messagesservice.postMessage(message)

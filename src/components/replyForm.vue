@@ -1,4 +1,5 @@
 <template>
+  <!-- this was made for replies but could not be implemented -->
   <form @submit.prevent="submit">
     <div class="form-group">
       <label class="form__label">Personal Message</label>

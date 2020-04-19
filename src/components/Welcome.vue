@@ -30,6 +30,7 @@ export default {
   .Welcome {
     margin-top: 30px;
     justify-content: left;
+  <!-- Sets imaage as background -->
     background-image: url(../assets/Welcome.jpg);
     background-repeat: no-repeat;
     background-position: center;

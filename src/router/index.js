@@ -28,7 +28,7 @@ import Welcome from '../components/Welcome'
 import AboutMe from '../components/AboutMe'
 import Legend from '../components/Legend'
 Vue.use(Router)
-
+// Sets all the paths for any clickable button, pin or tab
 export default new Router({
   routes: [
     {
