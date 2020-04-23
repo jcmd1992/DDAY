@@ -38,7 +38,7 @@ export default {
       this.$store.dispatch('setToken', null)
       this.$store.dispatch('setUser', null)
       window.location.reload()
-      this.$router.push('/Map')
+      this.$router.push('/Welcome')
     }
   }
 }

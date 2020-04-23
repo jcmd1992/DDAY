@@ -4,15 +4,16 @@
     <h3 class="vue-title"><i class="fa fa-list" style="padding: 3px"></i>{{messagetitle}}</h3>
     <div id="app1">
       <v-client-table :columns="columns" :data="message" :options="options">
-        <a slot="reply" slot-scope="props" class="fa fa-edit fa-2x" @click="sendReply()"></a>
+        <a slot="ReplyToMessage" slot-scope="props"  @click="replyMessage(props.row._id)">Something here</a>
       </v-client-table>
+      <div><button class='btn-primary' v-on:click="replyMessage('this')">Save Statement</button></div>
     </div>
   </div>
 </template>
-
+shpu
 <script>
 import messagesservice from '../services/messagesservice'
-import replyservice from '../services/replyservice'
+// import replyservice from '../services/replyservice'
 import Vue from 'vue'
 import VueTables from 'vue-tables-2'
 Vue.use(VueTables.ClientTable, {compileTemplates: true, filterByColumn: true})
@@ -24,17 +25,22 @@ export default {
       messagetitle: ' Message List ',
       message: [],
       errors: [],
-      props: ['_id', 'username'],
-      columns: ['messageid', 'usersid', 'message', 'Reply'],
+      // props: ['_id', 'username'],
+      columns: ['_id', 'usersid', 'message', 'Reply', 'ReplyToMessage', 'Remove'],
       options: {
         perPage: 10,
         filterable: ['usersid', 'message'],
         sortable: ['message'],
         headings: {
-          messageId: 'messageid',
+          _Id: '_id',
           usersid: 'usersid',
-          message: 'message'
-        }
+          message: 'message',
+          reply: 'Reply',
+          ReplyToMessage: 'ReplyToMessage',
+          Remove: 'Remove'
+
+        },
+        props: ['_id']
       }
     }
   },
@@ -42,9 +48,12 @@ export default {
   created () {
     // runs function called load messages
     this.loadMessages()
-    this.loadReplies()
+    // this.loadReplies()
   },
   methods: {
+    editDonation: function () {
+      console.log('here')
+    },
     loadMessages: function () {
       // retrieves all messages from database
       messagesservice.fetchMessage()
@@ -57,24 +66,25 @@ export default {
           this.errors.push(error)
           console.log(error)
         })
+    },
+    replyMessage: function (_id) {
+      console.log('Reply')
+      this.$router.params = _id
+      this.$router.push('/reply')
     }
-  },
-  sendReply: function (id) {
-    this.$router.params = id
-    this.$router.push('/reply')
-  },
-  loadReplies: function () {
-    replyservice.fetchReply()
-      .then(response => {
-        // JSON responses are automatically parsed.
-        this.message = response.data
-        console.log(this.reply)
-      })
-      .catch(error => {
-        this.errors.push(error)
-        console.log(error)
-      })
   }
+  // loadReplies: function () {
+  // replyservice.fetchReply()
+  // .then(response => {
+  // JSON responses are automatically parsed.
+  // this.message = response.data
+  // console.log(this.reply)
+  // })
+  // .catch(error => {
+  // this.errors.push(error)
+  // console.log(error)
+  // })
+  // }
 }
 
 </script>

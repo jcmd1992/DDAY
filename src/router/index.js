@@ -27,6 +27,7 @@ import Isigny from '../components/Isigny'
 import Welcome from '../components/Welcome'
 import AboutMe from '../components/AboutMe'
 import Legend from '../components/Legend'
+import reply from '../components/reply'
 Vue.use(Router)
 // Sets all the paths for any clickable button, pin or tab
 export default new Router({
@@ -184,6 +185,12 @@ export default new Router({
       path: '/Legend',
       name: 'Legend',
       component: Legend,
+      props: true
+    },
+    {
+      path: '/reply',
+      name: 'reply',
+      component: reply,
       props: true
     }
   ]
