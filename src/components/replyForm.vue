@@ -34,7 +34,7 @@ Vue.use(Vuelidate)
 // expected data from the user
 export default {
   name: 'FormData',
-  props: ['messageBtnTitle', 'replies'],
+  props: ['messageBtnTitle', 'replie'],
   data () {
     return {
       messagetitle: ' replies ',
