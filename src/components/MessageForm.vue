@@ -43,7 +43,7 @@ export default {
     }
   },
   validations: {
-    // validations rquired for user input
+    // validations required for message input
     messages: {
       required,
       minLength: minLength(5)

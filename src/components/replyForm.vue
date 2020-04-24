@@ -1,17 +1,19 @@
 <template>
-  <!-- this was made for replies but could not be implemented -->
+  <!-- this is used when the reply is clicked on in Messages table -->
   <form @submit.prevent="submit">
     <div class="form-group">
-      <label class="form__label">Personal Message</label>
-      <input class="form__input" placeholder="enter some message here" v-model.trim="$v.replies.$model"/>
+      <label class="form__label">Personal Reply</label>
+      <!-- this code takes in the user input -->
+      <input class="form__input" placeholder="enter some message here" v-model.trim="$v.reply.$model"/>
     </div>
     <p>
-      <button class="btn btn-primary btn1" type="submit" :disabled="submitStatus === 'PENDING'">{{ replyBtnTitle }}</button>
+      <!-- this take us to were messages are displayed -->
+      <button class="btn btn-primary btn1" type="submit" :disabled="submitStatus === 'PENDING'">{{ messageBtnTitle }}</button>
     </p>
     <p>
       <a href="#/messages" class="btn btn-primary btn1" role="button">Manage Messages</a>
     </p>
-    <p class="typo__p" v-if="submitStatus === 'OK'">Thanks for your Reply!</p>
+    <p class="typo__p" v-if="submitStatus === 'OK'">Thanks for your Message!</p>
     <p class="typo__p" v-if="submitStatus === 'ERROR'">Please Fill in the Form Correctly.</p>
     <p class="typo__p" v-if="submitStatus === 'PENDING'">Sending...</p>
   </form>
@@ -29,42 +31,46 @@ Vue.use(VueForm, {
   }
 })
 Vue.use(Vuelidate)
+// expected data from the user
 export default {
   name: 'FormData',
-  props: ['replyBtnTitle', 'reply'],
+  props: ['messageBtnTitle', 'replies'],
   data () {
     return {
-      replytitle: ' reply ',
-      replies: this.reply.replies,
+      messagetitle: ' replies ',
+      messageid: this.messagid,
+      reply: this.reply.replies,
       submitStatus: null
     }
   },
   validations: {
-
-    replies: {
+    // validations required for reply input
+    reply: {
       required,
       minLength: minLength(5)
     }
   },
   methods: {
+    // submits the reply to the database
     submit () {
       console.log('submit!')
       this.$v.$touch()
       if (this.$v.$invalid) {
         this.submitStatus = 'ERROR'
+        console.log('lol')
       } else {
         // do your submit logic here
         this.submitStatus = 'PENDING'
         setTimeout(() => {
           this.submitStatus = 'OK'
           var reply = {
-            reply: this.replies,
+            messageid: this.messageid,
             usersid: this.$store.state.user._id,
-            messageId: this.$store.state.user._id
+            replies: this.reply
           }
           this.reply = reply
           console.log('Submitting in replyForm : ' +
-              JSON.stringify(this.message, null, 5))
+              JSON.stringify(this.reply, null, 5))
           this.$emit('reply-is-created-updated', this.reply)
         }, 500)
       }

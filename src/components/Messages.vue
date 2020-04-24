@@ -6,7 +6,6 @@
       <v-client-table :columns="columns" :data="message" :options="options">
         <a slot="ReplyToMessage" slot-scope="props"  @click="replyMessage(props.row._id)">Something here</a>
       </v-client-table>
-      <div><button class='btn-primary' v-on:click="replyMessage('this')">Save Statement</button></div>
     </div>
   </div>
 </template>
@@ -24,9 +23,11 @@ export default {
     return {
       messagetitle: ' Message List ',
       message: [],
+      reply: [],
+      data: [],
       errors: [],
       // props: ['_id', 'username'],
-      columns: ['_id', 'usersid', 'message', 'Reply', 'ReplyToMessage', 'Remove'],
+      columns: ['_id', 'usersid', 'message', 'ReplyToMessage'],
       options: {
         perPage: 10,
         filterable: ['usersid', 'message'],
@@ -35,12 +36,10 @@ export default {
           _Id: '_id',
           usersid: 'usersid',
           message: 'message',
-          reply: 'Reply',
-          ReplyToMessage: 'ReplyToMessage',
-          Remove: 'Remove'
+          ReplyToMessage: 'ReplyToMessage'
 
         },
-        props: ['_id']
+        props: ('_id')
       }
     }
   },
@@ -51,9 +50,6 @@ export default {
     // this.loadReplies()
   },
   methods: {
-    editDonation: function () {
-      console.log('here')
-    },
     loadMessages: function () {
       // retrieves all messages from database
       messagesservice.fetchMessage()
@@ -72,19 +68,19 @@ export default {
       this.$router.params = _id
       this.$router.push('/reply')
     }
+    /* loadReplies: function () {
+      replyservice.fetchReply()
+        .then(response => {
+          this.message = response.data
+          console.log(this.reply)
+        })
+        .catch(error => {
+          this.errors.push(error)
+          console.log(error)
+        })
+    } */
   }
-  // loadReplies: function () {
-  // replyservice.fetchReply()
-  // .then(response => {
-  // JSON responses are automatically parsed.
-  // this.message = response.data
-  // console.log(this.reply)
-  // })
-  // .catch(error => {
-  // this.errors.push(error)
-  // console.log(error)
-  // })
-  // }
+
 }
 
 </script>

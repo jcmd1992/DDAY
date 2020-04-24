@@ -1,11 +1,11 @@
 <template>
-  <!-- this was made for replies but could not be implemented -->
+  <!-- this uses reply form to display when the button to reply is clicked on -->
   <div id="app1" class="hero">
     <h3 class="vue-title"><i class="fa fa-money" style="padding: 3px"></i>{{messagetitle}}</h3>
     <div class="container mt-3 mt-sm-5">
       <div class="row justify-content-center">
         <div class="col-md-6">
-          <reply-form :message="reply" messageBtnTitle="Send a Reply" @message-is-created-updated="submitReply"></reply-form>
+          <reply-form :message="replies" messageBtnTitle="Send a Reply" @reply-is-created-updated="submitReply"></reply-form>
         </div><!-- /col -->
       </div><!-- /row -->
     </div><!-- /container -->
@@ -16,19 +16,24 @@
 import replyservice from '../services/replyservice'
 import replyForm from '../components/replyForm'
 export default {
+  // expected data to be returned
   data () {
     return {
       replies: '',
       messageId: 0,
       usersid: 0,
-      messagetitle: ' Create a Message '
+      username: 0,
+      messagetitle: ' Create a Reply '
     }
   },
   components: {
+    // using message form
     'reply-form': replyForm
   },
   methods: {
+    // submits the message to the database
     submitReply: function (reply) {
+      console.log('stop')
       console.log(reply)
       replyservice.postReply(reply)
         .then(response => {
