@@ -12,7 +12,7 @@
 shpu
 <script>
 import messagesservice from '../services/messagesservice'
-// import replyservice from '../services/replyservice'
+import replyservice from '../services/replyservice'
 import Vue from 'vue'
 import VueTables from 'vue-tables-2'
 Vue.use(VueTables.ClientTable, {compileTemplates: true, filterByColumn: true})
@@ -27,15 +27,16 @@ export default {
       data: [],
       errors: [],
       // props: ['_id', 'username'],
-      columns: ['_id', 'usersid', 'message', 'ReplyToMessage'],
+      columns: ['_id', 'usersid', 'message', 'reply', 'ReplyToMessage'],
       options: {
         perPage: 10,
-        filterable: ['usersid', 'message'],
+        filterable: ['usersid', 'message', 'reply'],
         sortable: ['message'],
         headings: {
           _Id: '_id',
           usersid: 'usersid',
           message: 'message',
+          reply: 'reply',
           ReplyToMessage: 'ReplyToMessage'
 
         },
@@ -47,7 +48,7 @@ export default {
   created () {
     // runs function called load messages
     this.loadMessages()
-    // this.loadReplies()
+    this.loadReplies()
   },
   methods: {
     loadMessages: function () {
@@ -67,8 +68,8 @@ export default {
       console.log('Reply')
       this.$router.params = _id
       this.$router.push('/reply')
-    }
-    /* loadReplies: function () {
+    },
+    loadReplies: function () {
       replyservice.fetchReply()
         .then(response => {
           this.message = response.data
@@ -78,7 +79,7 @@ export default {
           this.errors.push(error)
           console.log(error)
         })
-    } */
+    }
   }
 
 }

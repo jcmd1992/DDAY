@@ -1,10 +1,10 @@
 <template>
-  <!-- this is used when the reply is clicked on in Messages table -->
+  <!-- this is used whn the message tab is clicked on -->
   <form @submit.prevent="submit">
     <div class="form-group">
       <label class="form__label">Personal Reply</label>
       <!-- this code takes in the user input -->
-      <input class="form__input" placeholder="enter some message here" v-model.trim="$v.reply.$model"/>
+      <input class="form__input" placeholder="enter some message here" v-model.trim="$v.replies.$model"/>
     </div>
     <p>
       <!-- this take us to were messages are displayed -->
@@ -34,42 +34,40 @@ Vue.use(Vuelidate)
 // expected data from the user
 export default {
   name: 'FormData',
-  props: ['messageBtnTitle', 'replies'],
+  props: ['messageBtnTitle', 'reply'],
   data () {
     return {
-      messagetitle: ' replies ',
-      messageid: this.messagid,
-      reply: this.reply.replies,
+      messagetitle: ' reply ',
+      replies: this.reply.replies,
       submitStatus: null
     }
   },
   validations: {
-    // validations required for reply input
-    reply: {
+    // validations required for message input
+    replies: {
       required,
       minLength: minLength(5)
     }
   },
   methods: {
-    // submits the reply to the database
+    // submits the message to the database
     submit () {
       console.log('submit!')
       this.$v.$touch()
       if (this.$v.$invalid) {
         this.submitStatus = 'ERROR'
-        console.log('lol')
       } else {
         // do your submit logic here
         this.submitStatus = 'PENDING'
         setTimeout(() => {
           this.submitStatus = 'OK'
           var reply = {
-            messageid: this.messageid,
+            reply: this.replies,
             usersid: this.$store.state.user._id,
-            replies: this.reply
+            replyid: this.replyid
           }
           this.reply = reply
-          console.log('Submitting in replyForm : ' +
+          console.log('Submitting in ReplyForm : ' +
               JSON.stringify(this.reply, null, 5))
           this.$emit('reply-is-created-updated', this.reply)
         }, 500)

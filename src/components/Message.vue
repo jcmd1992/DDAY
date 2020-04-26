@@ -22,7 +22,6 @@ export default {
       message: '',
       messageId: 0,
       usersid: 0,
-      username: 0,
       messagetitle: ' Create a Message '
     }
   },

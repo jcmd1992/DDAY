@@ -63,8 +63,7 @@ export default {
           this.submitStatus = 'OK'
           var message = {
             message: this.messages,
-            usersid: this.$store.state.user._id,
-            username: this.$store.state.user.username
+            usersid: this.$store.state.user._id
           }
           this.message = message
           console.log('Submitting in MessageForm : ' +
