@@ -54,10 +54,10 @@ export default {
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    color: deepskyblue;
+    color: deeppink;
   }
   .Omaha .info {
-    color: deepskyblue;
+    color: deeppink;
     font-family: bold;
     font-size: 15pt;
   }

@@ -36,11 +36,11 @@ export default {
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    color: lightgreen;
+    color: deeppink;
     height: 100vh;
   }
   .Weather .info {
-    color: lightgreen;
+    color: deeppink;
     font-family: bold;
     font-size: 15pt;
   }

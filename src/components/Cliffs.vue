@@ -43,10 +43,10 @@ export default {
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    color: deepskyblue;
+    color: deeppink;
   }
   .Cliffs .info {
-    color: deepskyblue;
+    color: deeppink;
     font-family: bold;
     font-size: 15pt;
   }

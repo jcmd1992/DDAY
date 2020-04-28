@@ -50,17 +50,12 @@ export default {
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    color: darkgoldenrod;
+    color: deeppink;
   }
   .Utah .info {
-    color: darkgoldenrod;
+    color: deeppink;
     font-family: bold;
     font-size: 15pt;
-  }
-
-  .Utah .image {
-height: 1vh;
-    width: 1vw;
   }
 
   .vue-title {

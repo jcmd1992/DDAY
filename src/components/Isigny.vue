@@ -31,10 +31,10 @@ export default {
     background-position: center;
     background-size: cover;
     height: 100vh;
-    color: deepskyblue;
+    color: deeppink;
   }
   .Isigny .info {
-    color: deepskyblue;
+    color: deeppink;
     font-family: bold;
     font-size: 15pt;
   }

@@ -49,10 +49,10 @@ export default {
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    color: darkgoldenrod;
+    color: deeppink;
   }
   .Gold .info {
-    color: darkgoldenrod;
+    color: deeppink;
     font-family: bold;
     font-size: 15pt;
   }
