@@ -11,5 +11,3 @@ information bu they need to sign up and sign in to ask questions or chat.
 ## References/APIs used
 
 Google Maps API
-
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
