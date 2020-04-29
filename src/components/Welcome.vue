@@ -35,10 +35,10 @@ export default {
     background-position: center;
     background-size: cover;
     height: 100vh;
-    color:darkgoldenrod;
+    color:deeppink;
   }
   .Welcome .info {
-    color: darkgoldenrod;
+    color: deeppink;
     font-family: bold;
     font-size: 15pt;
   }

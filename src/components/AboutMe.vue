@@ -5,7 +5,7 @@
     <table>
       <tr>
         <td>
-          <p class="lead">My name is Jack Dolan. I am 28 and I am currently a 4th year student studying Software Systems Development at Waterford Institute of Technology.
+          <p>My name is Jack Dolan. I am 28 and I am currently a 4th year student studying Software Systems Development at Waterford Institute of Technology.
           This was made for my final year project.</p>
         </td>
       </tr>
@@ -25,5 +25,7 @@ export default {
 </script>
 
 <style scoped>
-
+.AboutMe {
+  color: deeppink;
+}
 </style>
