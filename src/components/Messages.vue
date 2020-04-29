@@ -4,7 +4,7 @@
     <h3 class="vue-title"><i class="fa fa-list" style="padding: 3px"></i>{{messagetitle}}</h3>
     <div id="app1">
       <v-client-table :columns="columns" :data="message" :options="options">
-        <a slot="ReplyToMessage" slot-scope="props"  @click="replyMessage(props.row._id)">Something here</a>
+        <a slot="ReplyToMessage" slot-scope="props"  @click="replyMessage(props.row._id)">Click to reply</a>
       </v-client-table>
     </div>
   </div>
